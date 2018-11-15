@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+ 	<html> 
+ 	<head> 
+ 	<title>PhoneGap Device Ready Example</title> 
+ 	<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script> 
+ 	<script type="text/javascript" charset="utf-8"> 
+ 	document.addEventListener("deviceready", onDeviceReady, false); 
+ 	function onDeviceReady() { 
+ 	// call the phonegap api 
+ 	document. addEventListener("pause", onPause, false); 
+ 	document. addEventListener("resume", onResume, false); 
+ 	} 
+ 	function onPause(){ 
+ 	 alert("ok!");
+ 	} 
+ 	function onResume(){ 
+ 	 alert("rok!");
+ 	} 
+ 	</script> 
+ 	
+ 	</head> 
+ 	<body> 
+ 	</body> 
+ 	</html> 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" /><!-- Do not change this! -->
+		
+		<!-- Stylesheets -->
+		<!-- jQuery and jQuery Mobile -->
+		<link rel="stylesheet" type="text/css" href="./themes/AndroidHolo.min.css" /><!-- ThemeRoller theme -->
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.structure-1.4.5.min.css" />
+		
+		<!-- jpHolo theme -->
+		<link rel="stylesheet" type="text/css" href="./themes/jpholo.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jpholo.splitview.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jpholo.cards.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jpholo.spinner.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jpholo.smartphone.css" id="sizeStylesheet" />
+		
+		<!-- JavaScript -->
+		<!-- Cordova PhoneGap --><!-- exclude the scripts below if you are not deploying with PhoneGap -->
+		<script type="text/javascript" src="./cordova.js"></script>
+		<script type="text/javascript" src="./js/backgroundService-3.1.0.js"></script>
+		<script type="text/javascript" src="./js/cordova_custom_plugins.js"></script>
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+		
+		<!-- jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile.settings.js"></script><!-- this must be loaded before jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile-1.4.5.min.js"></script>
+		
+		<!-- Other frameworks -->
+		<script type="text/javascript" src="./js/fastclick.js"></script><!-- for speeding op tap events, load this AFTER jQuery Mobile -->
+		
+		<!-- Application -->
+		<!-- Set document, used in jpholo.core.js -->
+		<script type="text/javascript">
+			window.indexFile = "main.html";
+			window.phonegapExcluded = false; // set this value to either true or false, depending on if you load the Cordova PhoneGap scripts.
+		</script>
+		<!-- jpHolo core -->
+		<script type="text/javascript" src="./js/jpholo.core.js"></script>
+		<script type="text/javascript" src="./js/jpholo.core.plugins.js"></script>
+		<script type="text/javascript" src="./js/jpholo.core.services.js"></script>
+		<!-- your scripts -->
+		<script type="text/javascript" src="./js/application.js"></script>
+		
+		<title>jpHolo</title>
+	</head>
+	<body>
+		<div data-role="page" id="main">
+<div data-role="header">
+<h1>RSS/Atom Reader</h1>
+</div>
+<div data-role="content">
+TODO
+</div>
+</div>
+
+<div data-role="page" id="options">
+<div data-role="header">
+<a data-rel="back" data-role="button"
+data-icon="back" data-iconpos="notext">Back</a>
+<h1>Options</h1>
+</div>
+<div data-role="content">
+<div data-role="fieldcontain">
+<label for="url">Feed URL:</label>
+<input id="url" type="text"></input>
+</div>
+<fieldset class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#main" data-role="button"
+data-icon="delete">Cancel</a>
+</div>
+<div class="ui-block-b">
+<a href="#main" data-role="button"
+data-icon="check" data-theme="b"
+onClick="saveFeedURL();">Accept</a>
+</div>
+</fieldset>
+</div>
+</div>
+		
+	</body>
+</html>

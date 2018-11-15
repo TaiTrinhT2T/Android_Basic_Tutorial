@@ -1,6 +1,7 @@
 package example.com.cameratest;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,6 +23,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -36,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
     Preview preview;
     Camera camera;
     Context context;
+    boolean isShowCamera = false;
 
-    private static final int PERMISSION_REQUEST_CODE = 200;
-
+    @SuppressLint("WrongViewCast")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,92 +54,32 @@ public class MainActivity extends AppCompatActivity {
 
         preview.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT));
-        ((FrameLayout) findViewById(R.id.layout)).addView(preview);
+        ((LinearLayout) findViewById(R.id.layout)).addView(preview);
 
         preview.setKeepScreenOn(true);
-
         preview.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                if(camera != null){
+                if (camera != null && isShowCamera) {
                     camera.takePicture(shutter, raw, jpeg);
                 }
             }
         });
         Toast.makeText(context, getString(R.string.take_photo_help), Toast.LENGTH_LONG).show();
 
-        if (!checkPermission()) {
-            requestPermission();
-        }
-    }
-
-    private boolean checkPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted
-            return false;
-        }
-        return true;
-    }
-
-    private void requestPermission() {
-        ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
-                PERMISSION_REQUEST_CODE);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case PERMISSION_REQUEST_CODE:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    showCam();
-
-                    Toast.makeText(context, getString(R.string.take_photo_help), Toast.LENGTH_LONG).show();
-                    // main logic
-                } else {
-                    Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                                != PackageManager.PERMISSION_GRANTED) {
-                            showMessageOKCancel("You need to allow access permissions",
-                                    new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                requestPermission();
-                                            }
-                                        }
-                                    });
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
-        new AlertDialog.Builder(MainActivity.this)
-                .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
-                .create()
-                .show();
     }
 
     private void showCam(){
-        if (checkPermission()) {
-            int numCams = Camera.getNumberOfCameras();
-            if(numCams > 0){
-                try{
-                    camera = Camera.open(0);
-                    camera.startPreview();
-                    preview.setCamera(camera);
-                } catch (RuntimeException ex){
-                    Toast.makeText(context, getString(R.string.camera_not_found),
-                            Toast.LENGTH_LONG).show();
-                }
+        int numCams = Camera.getNumberOfCameras();
+        if(numCams > 0){
+            try{
+                camera = Camera.open(0);
+                preview.setCamera(camera);
+                camera.startPreview();
+            } catch (RuntimeException ex){
+                Toast.makeText(context, getString(R.string.camera_not_found),
+                        Toast.LENGTH_LONG).show();
             }
         }
     }

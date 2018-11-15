@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="home">  
+<div data-position="fixed" data-role="header" data-theme="b">  
+<a data-icon="home" data-iconpos="notext" href="">Home</a>  
+  
+  
+<h1>  
+Developers Code</h1>  
+</div>  
+<div align="center" data-role="content" id="contentConfirmation" name="contentConfirmation">  
+<h1>  
+Login Page</h1>  
+<h2>  
+</h2>  
+<form id="http://192.168.56.1:8080" action="http://192.168.56.1:8080/MyShop/login" method="POST">  
+<div data-role="fieldcontain">  
+<label for="url">Username:*</label>  
+          <input class="required" id="username" name="username" type="text" value="">            
+        </div>  
+<div data-role="fieldcontain">  
+<label for="url">Password:*</label>  
+          <input id="pwd" name="pwd" type="password" value="">            
+        </div>  
+<div class="ui-grid-a">  
+<div class="ui-body ui-body-b">  
+<div class="ui-block-a">  
+<button data-icon="delete" data-theme="c" type="submit">cancel</button>  
+        </div>  
+<div class="ui-block-b">  
+<button data-theme="b" type="submit">Login</button>  
+        </div>  
+</div>  
+</div>  
+</form>  
+</div>  
+</div> 
+</body>
+</html>

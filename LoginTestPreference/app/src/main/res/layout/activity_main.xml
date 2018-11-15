@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:id="@+id/LinearLayout1"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:orientation="vertical"
+ tools:context=".MainActivity" >
+ 
+<TableLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:stretchColumns="*"
+ >
+ 
+<TableRow
+ android:id="@+id/tableRow1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" >
+ 
+<TextView
+ android:id="@+id/textView2"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="User:" />
+ 
+<EditText
+ android:id="@+id/editUser"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:inputType="text"
+ android:ems="10" >
+ 
+<requestFocus />
+ </EditText>
+ </TableRow>
+ 
+<TableRow
+ android:id="@+id/tableRow2"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" >
+ </TableRow>
+ 
+<TableRow
+ android:id="@+id/tableRow3"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" >
+ 
+<TextView
+ android:id="@+id/textView3"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="Pasword:" />
+ 
+<EditText
+ android:id="@+id/editPassword"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:ems="10"
+ android:inputType="textPassword" />
+ </TableRow>
+ 
+<TableRow
+ android:id="@+id/tableRow4"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" >
+ 
+<CheckBox
+ android:id="@+id/chksaveacount"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_column="1"
+ android:text="Lưu thông tin" />
+ </TableRow>
+ 
+<TableRow
+ android:id="@+id/tableRow5"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" >
+ 
+<Button
+ android:id="@+id/btnlogin"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_column="1"
+ android:text="Đăng nhập" />
+ </TableRow>
+ </TableLayout>
+ 
+</LinearLayout>

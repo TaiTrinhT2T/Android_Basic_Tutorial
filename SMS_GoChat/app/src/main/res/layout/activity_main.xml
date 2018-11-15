@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@drawable/it"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+      <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/TenDangNhap"
+        android:textColor="#0d0e0e"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edDangNhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+      android:background="@drawable/edit"
+        android:ems="10"
+        android:hint="@string/TenDN"
+        android:textStyle="italic" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/mkhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/MKhau"
+        android:textColor="#0d0e0e"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edMatKhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+       android:background="@drawable/edit"
+        android:ems="10"
+        android:hint="@string/MatKhau" />
+
+    <CheckBox
+        android:id="@+id/ckLuuMK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp" 
+        android:textColor="#606669"
+        android:textStyle="bold"
+        android:text="@string/savePass" />
+
+    <Button
+        android:id="@+id/btn_DangNhap"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login"
+      
+        android:text="@string/Login" />
+
+    <TextView
+        android:id="@+id/tvDangKi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
+        android:textColor="#005c44"
+        android:text="@string/DangKi" />
+
+</LinearLayout>
